@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="hello">안녕하세요</h1>
+    <div class="alert" id="alert">
+      알림창임
+      <button onclick="displayAlert()">X</button>
+    </div>
+    <button onclick="displayAlert()">button</button>
+    <script>
+      function displayAlert() {
+        var alertDiv = document.getElementById("alert");
+
+        alertDiv.style.display =
+          alertDiv.style.display == "none" ? "flex" : "none";
+      }
+      //   document.getElementById("hello").style.fontSize = "16px";
+    </script>
+  </body>
+</html>
