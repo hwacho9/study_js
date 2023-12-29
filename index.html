@@ -13,6 +13,15 @@
         <link rel="stylesheet" href="main.css" />
     </head>
     <body>
+        <div class="black-bg">
+            <div class="white-bg">
+                <h4>로그인하세요</h4>
+                <button class="btn btn-danger close-btn" id="close">
+                    닫기
+                </button>
+            </div>
+        </div>
+
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
                 <span class="navbar-brand">Navbar</span>
@@ -22,7 +31,7 @@
             </div>
         </nav>
 
-        <ul class="list-group show">
+        <ul class="list-group">
             <li class="list-group-item">An item</li>
             <li class="list-group-item">A second item</li>
             <li class="list-group-item">A third item</li>
@@ -39,6 +48,10 @@
 
         <button onclick="displayAlert('ID')">button1</button>
         <button onclick="displayAlert('Password')">button2</button>
+
+        <div>
+            <button class="login-btn">Login</button>
+        </div>
 
         <script>
             document
@@ -64,6 +77,22 @@
                     document
                         .querySelector(".list-group")
                         .classList.toggle("show");
+                });
+
+            document
+                .querySelector(".login-btn")
+                .addEventListener("click", function () {
+                    document
+                        .querySelector(".black-bg")
+                        .classList.add("show-modal");
+                });
+
+            document
+                .getElementById("close")
+                .addEventListener("click", function () {
+                    document
+                        .querySelector(".black-bg")
+                        .classList.remove("show-modal");
                 });
         </script>
 
