@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="main.css" />
-        <title>Document</title>
-    </head>
-    <body>
-        <h1 id="hello">안녕하세요</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="hello">안녕하세요</h1>
 
-        <div class="alert" id="alert">
-            <p id="title">alert</p>
-            <button id="close">x</button>
-        </div>
+    <div class="alert" id="alert">
+      <p id="title">alert</p>
+      <button id="close">x</button>
+    </div>
 
-        <button onclick="displayAlert('ID')">button1</button>
-        <button onclick="displayAlert('Password')">button2</button>
+    <button onclick="displayAlert('ID')">button1</button>
+    <button onclick="displayAlert('Password')">button2</button>
 
-        <script>
-            document
-                .getElementById("close")
-                .addEventListener("click", function () {
-                    document.getElementById("alert").style.display = "none";
-                }); // function = callback
+    <script>
+      document.getElementById("close").addEventListener("click", function () {
+        document.getElementById("alert").style.display = "none";
+      }); // function = callback
 
-            // function parameter
-            function displayAlert(name) {
-                var alertDiv = document.getElementById("alert");
+      // function parameter
+      function displayAlert(name) {
+        var alertDiv = document.getElementById("alert");
 
-                alertDiv.style.display =
-                    alertDiv.style.display == "none" ? "block" : "none";
-                document.getElementById("title").innerHTML =
-                    "Please enter the " + name;
-            }
-            //   document.getElementById("hello").style.fontSize = "16px";
-        </script>
-    </body>
+        alertDiv.style.display =
+          alertDiv.style.display == "none" ? "block" : "none";
+        document.getElementById("title").innerHTML = "Please enter the " + name;
+      }
+      //   document.getElementById("hello").style.fontSize = "16px";
+    </script>
+  </body>
 </html>
