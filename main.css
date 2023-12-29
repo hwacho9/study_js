@@ -5,3 +5,11 @@
     color: white;
     display: none;
 }
+
+.list-group {
+    display: none;
+}
+
+.show {
+    display: block;
+}
