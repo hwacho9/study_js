@@ -1,36 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="main.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1 id="hello">안녕하세요</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body>
+        <div class="black-bg">
+            <div class="white-bg">
+                <h4>로그인하세요</h4>
+                <button class="btn btn-danger close-btn" id="close">
+                    닫기
+                </button>
+            </div>
+        </div>
 
-    <div class="alert" id="alert">
-      <p id="title">alert</p>
-      <button id="close">x</button>
-    </div>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand">Navbar</span>
+                <button class="navbar-toggler" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
 
-    <button onclick="displayAlert('ID')">button1</button>
-    <button onclick="displayAlert('Password')">button2</button>
+        <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+        </ul>
 
-    <script>
-      document.getElementById("close").addEventListener("click", function () {
-        document.getElementById("alert").style.display = "none";
-      }); // function = callback
+        <h1 id="hello">안녕하세요</h1>
 
-      // function parameter
-      function displayAlert(name) {
-        var alertDiv = document.getElementById("alert");
+        <div class="alert" id="alert">
+            <p id="title">alert</p>
+            <button id="close">x</button>
+        </div>
 
-        alertDiv.style.display =
-          alertDiv.style.display == "none" ? "block" : "none";
-        document.getElementById("title").innerHTML = "Please enter the " + name;
-      }
-      //   document.getElementById("hello").style.fontSize = "16px";
-    </script>
-  </body>
+        <button onclick="displayAlert('ID')">button1</button>
+        <button onclick="displayAlert('Password')">button2</button>
+
+        <div>
+            <button class="login-btn">Login</button>
+        </div>
+
+        <script>
+            document
+                .getElementById("close")
+                .addEventListener("click", function () {
+                    document.getElementById("alert").style.display = "none";
+                }); // function = callback
+
+            // function parameter
+            function displayAlert(name) {
+                var alertDiv = document.getElementById("alert");
+
+                alertDiv.style.display =
+                    alertDiv.style.display == "none" ? "block" : "none";
+                document.getElementById("title").innerHTML =
+                    "Please  enter the " + name;
+            }
+            //   document.getElementById("hello").style.fontSize = "16px";
+
+            document
+                .querySelectorAll(".navbar-toggler")[0]
+                .addEventListener("click", function () {
+                    document
+                        .querySelector(".list-group")
+                        .classList.toggle("show");
+                });
+
+            document
+                .querySelector(".login-btn")
+                .addEventListener("click", function () {
+                    document
+                        .querySelector(".black-bg")
+                        .classList.add("show-modal");
+                });
+
+            document
+                .getElementById("close")
+                .addEventListener("click", function () {
+                    document
+                        .querySelector(".black-bg")
+                        .classList.remove("show-modal");
+                });
+        </script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>
