@@ -41,19 +41,22 @@
       <li class="list-group-item">And a fifth one</li>
     </ul>
 
-    <h1 id="hello">안녕하세요</h1>
+    <header class="head-bg">
+      <h1 id="hello">안녕하세요</h1>
+      <div>
+        <button class="login-btn btn close-btn btn-danger">Login</button>
+      </div>
+    </header>
 
-    <div class="alert" id="alert">
-      <p id="title">alert</p>
-      <button id="close">x</button>
+    <div>
+      <div class="alert" id="alert">
+        <p id="title">alert</p>
+        <button id="close">x</button>
+      </div>
     </div>
 
     <button onclick="displayAlert('ID')">button1</button>
     <button onclick="displayAlert('Password')">button2</button>
-
-    <div>
-      <button class="login-btn">Login</button>
-    </div>
 
     <script>
       document.getElementById("close").addEventListener("click", function () {
